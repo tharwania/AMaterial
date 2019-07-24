@@ -1,5 +1,33 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row fxLayout fxLayoutGap="20px" >
+    <span></span>
+    <span fxFlexAlign="center" class="logo-center"> 
+      <img src="../assets/logo.png" width="95" height="60" alt="AMaterial Logo" />
+    </span>
+  <button fxFlexAlign="center"
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="drawer.toggle()">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  <div class="right"> 
+    <button mat-icon-button>
+        <mat-icon matBadge="22" matBadgePosition="above after" matBadgeColor="accent">notification_important</mat-icon>
+    </button>
+    <button mat-icon-button>
+        <mat-icon>room</mat-icon>
+    </button>
+    <button mat-icon-button>
+        <mat-icon>perm_identity</mat-icon>
+    </button>
+     
+  </div>
+</mat-toolbar-row>
+</mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" >
+  <mat-sidenav #drawer class="sidenav"
+  [mode]="(isHandset$ | async) ? 'over' : 'side'"  [opened]="!(isHandset$ | async)">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="#">Link 1</a>
@@ -8,17 +36,6 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-        <span> <img src="../assets/logo.png" width="95" height="60" alt="AMaterial Logo" /></span>
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      
-    </mat-toolbar>
     <app-dashboard></app-dashboard> 
   </mat-sidenav-content>
 </mat-sidenav-container>

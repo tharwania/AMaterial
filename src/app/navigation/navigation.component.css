@@ -15,3 +15,11 @@
   top: 0;
   z-index: 1;
 }
+
+.right{
+  margin-left: auto;
+}
+
+.logo-center{
+  margin-top: 8px;
+}
