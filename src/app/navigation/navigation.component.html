@@ -1,27 +1,39 @@
+<div fxflex>
 <mat-toolbar color="primary">
   <mat-toolbar-row fxLayout fxLayoutGap="20px" >
-    <span></span>
-    <span fxFlexAlign="center" class="logo-center"> 
-      <img src="../assets/logo.png" width="95" height="60" alt="AMaterial Logo" />
+    <span ></span>
+    <span fxFlex.lt-md="grow"  class="logo-center"> 
+      <img src="assets/logo.png" width="95" height="60" alt="AMaterial Logo" />
     </span>
-  <button fxFlexAlign="center"
+  <button fxFlexAlign="center" fxFlexOrder.lt-md="-1"
     type="button"
     aria-label="Toggle sidenav"
     mat-icon-button
     (click)="drawer.toggle()">
     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
+  <div fxLayout fxLayoutGap="1px"  fxHide.lt-md="true">
+      <button mat-button>Dashboard</button>
+      <button mat-button>Users</button>
+      <button mat-button>Settings</button>      
+  </div>
+  
   <div class="right"> 
     <button mat-icon-button>
-        <mat-icon matBadge="22" matBadgePosition="above after" matBadgeColor="accent">notification_important</mat-icon>
+        <mat-icon matBadge="22" matBadgePosition="above after" [matMenuTriggerFor]="appMenu" matBadgeColor="accent">notification_important</mat-icon>
     </button>
-    <button mat-icon-button>
-        <mat-icon>room</mat-icon>
-    </button>
-    <button mat-icon-button>
+    <mat-menu #appMenu="matMenu" xPosition="before" yPosition="below">
+      <button mat-menu-item>Settings</button>
+      <button mat-menu-item>Help</button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="accountMenu">
         <mat-icon>perm_identity</mat-icon>
     </button>
-     
+    <mat-menu #accountMenu="matMenu" xPosition="before" yPosition="below">
+      <button mat-menu-item>Settings</button>
+      <button mat-menu-item>Help</button>
+      <button mat-menu-item>Help</button>
+    </mat-menu>
   </div>
 </mat-toolbar-row>
 </mat-toolbar>
@@ -39,3 +51,4 @@
     <app-dashboard></app-dashboard> 
   </mat-sidenav-content>
 </mat-sidenav-container>
+</div>
