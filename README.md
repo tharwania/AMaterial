@@ -1,16 +1,54 @@
 # AMaterial
 
-An simplistic Angular 8 theme; using angular material and flexbox (AngularFlex).
+![N|Solid](https://avatars-05.gitter.im/group/iv/8/57542ca8c43b8c60197754f5?s=48)
 
-## Development server
+AMaterial is a angular based, responsive and made with angular material.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+  - Dashboard
+  - Tabs and Icons
+  - Mobile UI
+
+# New Features!
+
+  - Dashboard
 
 
-## Running unit tests
+Watch Live Demo https://tharwania.github.io/AMaterial/AMaterial/
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Theme can be used for 
 
-## Running end-to-end tests
+> Entreprice Applications
+> Dashboard or marketing analytics
+> Invoicing System
+> and various other ideas....
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+### Tech
+
+* [Angular 8] - HTML enhanced for web apps!
+* [Angular Material] - awesome controlls by google people
+* [Flex Laypout] - css positioning and layout system.
+
+
+### Installation
+
+It requires [Node.js](https://nodejs.org/)  to run.
+
+Install the dependencies and devDependencies and start the server.
+
+```sh
+$ git clone https://github.com/tharwania/AMaterial.git
+$ npm install
+$ ng serve
+```
+
+For production environments...
+
+```sh
+$ git clone https://github.com/tharwania/AMaterial.git
+$ npm install
+$ ng build --prod
+```
+
+
+
