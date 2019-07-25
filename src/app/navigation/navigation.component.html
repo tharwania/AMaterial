@@ -23,16 +23,35 @@
         <mat-icon matBadge="22" matBadgePosition="above after" [matMenuTriggerFor]="appMenu" matBadgeColor="accent">notification_important</mat-icon>
     </button>
     <mat-menu #appMenu="matMenu" xPosition="before" yPosition="below">
-      <button mat-menu-item>Settings</button>
       <button mat-menu-item>Help</button>
     </mat-menu>
     <button mat-icon-button [matMenuTriggerFor]="accountMenu">
         <mat-icon>perm_identity</mat-icon>
     </button>
     <mat-menu #accountMenu="matMenu" xPosition="before" yPosition="below">
-      <button mat-menu-item>Settings</button>
-      <button mat-menu-item>Help</button>
-      <button mat-menu-item>Help</button>
+        <mat-list>
+            <mat-toolbar mat-subheader>Account</mat-toolbar>
+            <mat-divider></mat-divider>
+            <div *ngFor="let folder of folders">
+              <button mat-menu-item>
+                  <mat-icon class="menu-icon">{{folder.icon}}</mat-icon>
+                  <span>{{folder.name}}</span>
+              </button>
+              
+              <mat-divider></mat-divider>
+            </div>
+            <mat-divider></mat-divider>
+            <mat-toolbar mat-subheader>Settings</mat-toolbar>
+            <mat-divider></mat-divider>
+            <div *ngFor="let note of notes">
+              <button mat-menu-item>
+                  <mat-icon class="menu-icon">{{note.icon}}</mat-icon>
+                  <span>{{note.name}}</span>
+              </button>
+              
+              <mat-divider></mat-divider>
+            </div>
+          </mat-list>
     </mat-menu>
   </div>
 </mat-toolbar-row>
